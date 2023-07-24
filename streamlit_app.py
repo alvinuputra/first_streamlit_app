@@ -10,10 +10,10 @@ streamlit.text('🥑🍞 Avocado Toast')
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
 df = pd.read_csv('https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt')
-df.set_index('Serving_Size', inplace = True)
+  df.set_index('Fruit', inplace = True)
 
 # Let's put a pick list here so they can pick the fruit they want to include 
-streamlit.multiselect("Pick some fruits:", list(df.index))
+streamlit.multiselect("Pick some fruits:", list(df.index),['Avocado','Strawberries'])
 
 # Display the table on the page.
 streamlit.dataframe(df)
